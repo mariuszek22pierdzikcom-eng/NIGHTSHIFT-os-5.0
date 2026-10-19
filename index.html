@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06101e">
+  <title>NIGHTSHIFT OS 5.0 | OMEGA BLUE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="scanlines"></div>
+
+  <div id="boot" class="boot">
+    <div class="boot-logo">N<span>Ω</span></div>
+    <h1>NIGHTSHIFT <b>OS</b></h1>
+    <p>OMEGA BLUE EDITION / INITIALIZING</p>
+    <div class="boot-track"><span></span></div>
+    <small id="boot-status">Loading interface modules...</small>
+  </div>
+
+  <main id="desktop" class="desktop hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">N<span>Ω</span></div>
+        <div>
+          <strong>NIGHTSHIFT <b>OS</b></strong>
+          <small>OMEGA BLUE EDITION <i class="live-dot"></i></small>
+        </div>
+      </div>
+      <div class="top-status"><i class="live-dot"></i> LOCAL SESSION <span>/</span> BUILD 5.0.0</div>
+      <div class="top-clock" id="top-clock">--:--:--</div>
+    </header>
+
+    <aside class="dock">
+      <button data-open="control" title="Control Center">◈<small>Home</small></button>
+      <button data-open="terminal" title="Terminal">⌘<small>Terminal</small></button>
+      <button data-open="notes" title="Notes">▤<small>Notes</small></button>
+      <button data-open="files" title="File Explorer">▧<small>Files</small></button>
+      <button data-open="settings" title="Settings">⚙<small>Settings</small></button>
+      <div class="dock-spacer"></div>
+      <button id="sound-toggle" title="Toggle sound">♫<small>Sound</small></button>
+      <button id="start-button" title="Start menu">⊞<small>Start</small></button>
+    </aside>
+
+    <section class="workspace" id="workspace">
+      <div class="welcome">
+        <div class="eyebrow"><i class="live-dot"></i> SYSTEM ONLINE</div>
+        <h2>Welcome back,<br><span>Operator.</span></h2>
+        <p>Your digital workspace is ready.</p>
+        <div class="welcome-actions">
+          <button class="primary" data-open="control">Open Control Center ↗</button>
+          <button class="secondary" data-open="terminal">Launch Terminal ⌘</button>
+        </div>
+      </div>
+
+      <div class="desktop-clock">
+        <small>LOCAL TIME / EUROPE</small>
+        <div id="big-clock">00<span>:</span>00</div>
+        <p id="desktop-date">LOADING DATE</p>
+      </div>
+
+      <div class="shortcuts">
+        <button data-open="control"><i>◈</i>Control Center</button>
+        <button data-open="terminal"><i>⌘</i>Terminal PRO</button>
+        <button data-open="notes"><i>▤</i>Notes 2.0</button>
+        <button data-open="files"><i>▧</i>File Explorer</button>
+      </div>
+
+      <div class="watermark">NIGHTSHIFT <b>5.0</b><small>MAKE YOUR OWN SYSTEM</small></div>
+    </section>
+
+    <!-- CONTROL CENTER -->
+    <section class="window open" id="window-control" data-app="control"
+      style="left:18%;top:12%;width:min(760px,72vw);height:min(570px,72vh)">
+      <div class="window-head">
+        <div class="window-title"><i class="cyan">◈</i><div>OMEGA CONTROL CENTER<small>System overview</small></div></div>
+        <div class="window-controls">
+          <button data-minimize="control">−</button>
+          <button data-maximize="control">□</button>
+          <button data-close="control">×</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="section-heading">
+          <div><small class="eyebrow">OVERVIEW / 01</small><h3>System status</h3></div>
+          <span class="status-pill"><i></i> OPERATIONAL</span>
+        </div>
+        <div class="stats">
+          <article class="stat-card"><small>LOCAL TIME</small><strong id="stat-time">--:--</strong><span>Your device clock</span></article>
+          <article class="stat-card"><small>SESSION</small><strong id="session-time">00:00</strong><span>Time since launch</span></article>
+          <article class="stat-card"><small>BROWSER</small><strong id="browser-name">Detecting</strong><span>Runtime environment</span></article>
+          <article class="stat-card"><small>LOCAL STORAGE</small><strong id="storage-status">Checking</strong><span>Browser storage</span></article>
+        </div>
+        <div class="charts">
+          <article class="chart-card">
+            <div class="chart-heading">CPU LOAD <span>DEMO DATA</span></div>
+            <div class="chart-number"><strong id="cpu-value">--%</strong><small>simulated</small></div>
+            <div class="meter"><i id="cpu-meter"></i></div>
+            <div class="sparkline" id="cpu-spark"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-heading">MEMORY LOAD <span>DEMO DATA</span></div>
+            <div class="chart-number"><strong id="ram-value">--%</strong><small>simulated</small></div>
+            <div class="meter"><i id="ram-meter"></i></div>
+            <div class="sparkline" id="ram-spark"></div>
+          </article>
+        </div>
+        <div class="notice"><b>ⓘ</b><div><strong>Browser sandbox</strong><p>CPU and memory charts are simulated. This page does not scan your computer.</p></div></div>
+      </div>
+    </section>
+
+    <!-- TERMINAL -->
+    <section class="window" id="window-terminal" data-app="terminal"
+      style="left:23%;top:15%;width:min(720px,72vw);height:min(520px,70vh)">
+      <div class="window-head">
+        <div class="window-title"><i class="green">⌘</i><div>OMEGA TERMINAL PRO<small>Command interface</small></div></div>
+        <div class="window-controls">
+          <button data-minimize="terminal">−</button>
+          <button data-maximize="terminal">□</button>
+          <button data-close="terminal">×</button>
+        </div>
+      </div>
+      <div class="terminal-toolbar">
+        <i class="terminal-dot red"></i><i class="terminal-dot yellow"></i><i class="terminal-dot green-dot"></i>
+        <span>operator@nightshift: ~</span><button id="clear-terminal">CLEAR</button>
+      </div>
+      <div id="terminal-output" class="terminal-output" aria-live="polite"></div>
+      <form id="terminal-form" class="terminal-form">
+        <label>operator<span>@</span>omega <b>›</b></label>
+        <input id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type help to list commands">
+        <button type="submit">RUN ↵</button>
+      </form>
+    </section>
+
+    <!-- NOTES -->
+    <section class="window" id="window-notes" data-app="notes"
+      style="left:28%;top:18%;width:min(660px,70vw);height:min(500px,68vh)">
+      <div class="window-head">
+        <div class="window-title"><i class="violet">▤</i><div>NOTES 2.0<small>Local notebook</small></div></div>
+        <div class="window-controls">
+          <button data-minimize="notes">−</button>
+          <button data-maximize="notes">□</button>
+          <button data-close="notes">×</button>
+        </div>
+      </div>
+      <div class="notes-layout">
+        <aside class="notes-sidebar"><small>WORKSPACE</small><div class="note-selected">▤ Quick note</div><p>Autosave is enabled.<br>Your note stays in this browser.</p></aside>
+        <div class="notes-editor">
+          <div class="editor-bar"><span>UNTITLED NOTE</span><span id="note-save-state">SAVED</span></div>
+          <input id="note-title" maxlength="90" placeholder="Note title...">
+          <textarea id="note-content" placeholder="Write an idea, command, or plan here..."></textarea>
+          <div class="editor-footer"><span id="note-count">0 characters</span><button id="clear-note" class="secondary">Clear note</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILE EXPLORER -->
+    <section class="window" id="window-files" data-app="files"
+      style="left:25%;top:14%;width:min(700px,74vw);height:min(520px,70vh)">
+      <div class="window-head">
+        <div class="window-title"><i class="aqua">▧</i><div>FILE EXPLORER<small>Manual file preview</small></div></div>
+        <div class="window-controls">
+          <button data-minimize="files">−</button>
+          <button data-maximize="files">□</button>
+          <button data-close="files">×</button>
+        </div>
+      </div>
+      <div class="file-toolbar">
+        <span>LOCAL / SELECTED FILES</span>
+        <label class="primary file-picker">Choose files<input id="file-input" type="file" multiple></label>
+      </div>
+      <div class="files-layout">
+        <div id="file-list" class="file-list"><div class="empty-state"><b>▧</b><strong>No files selected</strong><p>Choose files to preview them here. Nothing is scanned automatically.</p></div></div>
+        <div id="file-preview" class="file-preview"><div class="empty-state"><b>⌁</b><strong>Preview panel</strong><p>Select a text file from the list.</p></div></div>
+      </div>
+      <div class="file-foot">ONLY FILES YOU SELECT ARE ACCESSIBLE TO THIS APP</div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="window" id="window-settings" data-app="settings"
+      style="left:30%;top:16%;width:min(610px,70vw);height:min(510px,68vh)">
+      <div class="window-head">
+        <div class="window-title"><i class="blue">⚙</i><div>PERSONALIZATION<small>Make it yours</small></div></div>
+        <div class="window-controls">
+          <button data-minimize="settings">−</button>
+          <button data-maximize="settings">□</button>
+          <button data-close="settings">×</button>
+        </div>
+      </div>
+      <div class="window-body settings-body">
+        <small class="eyebrow">APPEARANCE / 01</small><h3>Interface settings</h3>
+        <p class="muted">Tune the look and feel of your workspace.</p>
+        <div class="setting-row"><div><b>Accent color</b><small>Choose the system glow</small></div>
+          <div class="swatches"><button class="swatch selected" data-theme="blue" aria-label="Blue"></button><button class="swatch cyan" data-theme="cyan" aria-label="Cyan"></button><button class="swatch violet" data-theme="violet" aria-label="Violet"></button><button class="swatch pink" data-theme="pink" aria-label="Pink"></button></div>
+        </div>
+        <div class="setting-row"><div><b>Neon intensity</b><small>Adjust glow strength</small></div><input id="glow-range" type="range" min="20" max="100" value="72"></div>
+        <div class="setting-row"><div><b>Reduce motion</b><small>Use fewer animations</small></div><label class="switch"><input id="motion-toggle" type="checkbox"><span></span></label></div>
+        <div class="setting-row"><div><b>Interface sounds</b><small>Subtle clicks and alerts</small></div><label class="switch"><input id="settings-sound-toggle" type="checkbox"><span></span></label></div>
+        <p class="settings-note">Preferences are saved locally in this browser.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="window" id="window-about" data-app="about"
+      style="left:34%;top:18%;width:min(520px,65vw);height:390px">
+      <div class="window-head">
+        <div class="window-title"><i class="cyan">NΩ</i><div>ABOUT NIGHTSHIFT<small>System information</small></div></div>
+        <div class="window-controls">
+          <button data-minimize="about">−</button>
+          <button data-maximize="about">□</button>
+          <button data-close="about">×</button>
+        </div>
+      </div>
+      <div class="window-body about-body">
+        <div class="about-logo">N<span>Ω</span></div>
+        <h3>NIGHTSHIFT OS <b>5.0</b></h3><p>OMEGA BLUE EDITION</p>
+        <hr>
+        <div class="about-row"><span>Build</span><b>5.0.0 / WEB DESKTOP</b></div>
+        <div class="about-row"><span>Runtime</span><b>HTML · CSS · JavaScript</b></div>
+        <div class="about-row"><span>Storage</span><b>Browser localStorage</b></div>
+        <footer>DESIGNED FOR YOUR DIGITAL WORKSPACE.</footer>
+      </div>
+    </section>
+
+    <div id="start-menu" class="start-menu hidden">
+      <div class="start-header"><div class="start-logo">N<span>Ω</span></div><div><b>NIGHTSHIFT OS</b><small>OMEGA BLUE EDITION</small></div></div>
+      <div class="start-label">PINNED APPLICATIONS</div>
+      <button data-open="control"><i>◈</i>Control Center <small>Overview</small></button>
+      <button data-open="terminal"><i>⌘</i>Terminal PRO <small>Commands</small></button>
+      <button data-open="notes"><i>▤</i>Notes 2.0 <small>Workspace</small></button>
+      <button data-open="files"><i>▧</i>File Explorer <small>Local preview</small></button>
+      <button data-open="settings"><i>⚙</i>Personalization <small>Appearance</small></button>
+      <button data-open="about"><i>NΩ</i>About NIGHTSHIFT <small>Version</small></button>
+      <div class="start-footer"><span><i class="live-dot"></i> Local session active</span><button id="restart-ui">↻ Restart UI</button></div>
+    </div>
+
+    <footer class="taskbar">
+      <button id="taskbar-start" class="task-start">⊞</button>
+      <div id="taskbar-apps" class="taskbar-apps"></div>
+      <div class="taskbar-tray"><span><i class="live-dot"></i> ONLINE</span><span id="taskbar-date">--/--/----</span><b id="taskbar-clock">--:--</b><button id="taskbar-settings" title="Settings">⚙</button></div>
+    </footer>
+    <div id="toast-stack" class="toast-stack"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
