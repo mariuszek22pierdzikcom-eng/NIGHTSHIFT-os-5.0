@@ -1,0 +1,33 @@
+
+{
+  "name": "nightshift-os",
+  "version": "5.0.0",
+  "description": "NIGHTSHIFT OS Desktop",
+  "main": "main.cjs",
+  "author": "NIGHTSHIFT",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "dev.nightshift.os",
+    "productName": "NIGHTSHIFT OS",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "index.html",
+      "style.css",
+      "script.js",
+      "main.cjs"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
